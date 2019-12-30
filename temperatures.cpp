@@ -68,25 +68,3 @@ int main(){
 
 
 
-1. 比栈顶小的存，比栈顶大的出栈
-2. 初始值设为0之后， 如果没有比当前元素大的就不用再置零了，这个很巧妙
-
-```cpp
-class Solution {
-public:
-    vector<int> dailyTemperatures(vector<int>& T) {
-        if(T.empty()) return vector<int>();
-        vector<int> v(T.size()); 
-        stack<int> stk;
-        for(int i=0;i<T.size();++i)
-        {
-            while(!stk.empty() && T[stk.top()]<T[i])
-            {
-                v[stk.top()]=i-stk.top();
-                stk.pop();
-            }
-            stk.push(i);
-        }
-        return v;
-    }
-};
