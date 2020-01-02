@@ -43,5 +43,6 @@
     },
     "cSpell.words": [
         "yunruowu"
-    ]
+    ],
+    "python.formatting.provider": "yapf"
 }
