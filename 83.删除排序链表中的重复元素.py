@@ -4,7 +4,7 @@
 @Author: yunruowu
 @Date: 2020-01-02 10:34:37
 @LastEditors  : yunruowu
-@LastEditTime : 2020-01-02 11:15:22
+@LastEditTime : 2020-01-02 15:13:45
 '''
 #
 # @lc app=leetcode.cn id=83 lang=python3
@@ -50,11 +50,20 @@ class ListNode:
 class Solution:
     def deleteDuplicates(self, head: ListNode) -> ListNode:
         if head is not None:
-            print("sd")
-        sieve = [True] * 101
-        for i in range(2, 100):
-            if sieve[i]:
-                print(i)
-                for j in range(i*i, 100, i):
-                    sieve[j] = False
+            p = head
+            q = head.next
+        else:
+            return head
+        while q is not None:
+            print(q.val)
+            print(p.val)
+            while q.val == p.val:
+                q = q.next
+                if q is None:
+                    p.next = None
+                    return head
+            p.next = q
+            p = p.next
+            q = q.next
+        return head
 # @lc code=end
