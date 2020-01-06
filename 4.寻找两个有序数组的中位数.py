@@ -4,7 +4,7 @@
 @Author: yunruowu
 @Date: 2020-01-03 08:15:18
 @LastEditors  : yunruowu
-@LastEditTime : 2020-01-03 08:48:53
+@LastEditTime : 2020-01-04 08:18:58
 '''
 #
 # @lc app=leetcode.cn id=4 lang=python3
@@ -57,7 +57,7 @@ class Solution:
         n = len(nums2)
         i = int(0)
         j = int(0)
-        x = 0 
+        x = 0
         if (m+n) % 2 != 0:  # 奇数个数字
             print("sd")
             for t in range(0, int((m + n)/2)+1):
