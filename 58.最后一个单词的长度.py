@@ -4,7 +4,7 @@
 @Author: yunruowu
 @Date: 2020-01-02 08:47:49
 @LastEditors  : yunruowu
-@LastEditTime : 2020-01-02 09:05:08
+@LastEditTime : 2020-01-10 21:48:39
 '''
 #
 # @lc app=leetcode.cn id=58 lang=python3
@@ -52,4 +52,3 @@ class Solution:
         return j;
         
 # @lc code=end
-
