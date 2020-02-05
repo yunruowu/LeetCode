@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-01-24 11:34:37
  * @LastEditors  : yunruowu
- * @LastEditTime : 2020-01-24 11:38:38
+ * @LastEditTime : 2020-02-04 18:08:54
  */
 /*
  * @lc app=leetcode.cn id=88 lang=cpp
@@ -48,12 +48,33 @@ class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         int i = 0;
+        int len = m;
         int j = 0;
-        while (i < m && j < n)
+        while (j < n)
         {
-            if(nums1[i]<nums2[j]){
+            if(i==0){
+                while(nums1[i]>nums2[j]&&j<n){
+                    nums1.insert(nums1.begin(),nums2[j]);
+                    j++;
+                    len++;
+                }
+            }else if (i == len-1 && nums2[j]>nums1[i])
+            {
+                while (j<n)
+                {
+                    nums1.insert(nums1.begin()+i,nums2[j]);
+                    j++;
+                    len++;
+                }
+            }else{
+                while(nums1[i]<nums2[j]&&nums1[i+1]>nums2[j]){
+                    nums1.insert(nums1.begin()+i,nums2[j]);
+                    j++;
+                    len++;
+                }
                 
             }
+            i++;
         }
         
     }

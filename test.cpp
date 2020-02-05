@@ -1,114 +1,42 @@
-#include<iostream>
-#include<vector>
-using namespace std; 
-class MyCircularQueue {
-    public:
-        /** Initialize your data structure here. Set the size of the queue to be k. */
-        vector<int> data;
-        // int data_len ;
-        int data_size;
-        int p_start;
-        int p_end;
-        bool tag;
-        MyCircularQueue(int k){
-            tag = true;//标记判断空还是满；
-            data_size = k;
-            data.reserve(data_size);
-            p_start = 0;
-            p_end = 0;
-        }
-        
-        /** Insert an element into the circular queue. Return true if the operation is successful. */
-        bool enQueue(int value) {
-            // cout<<p_end<<(p_start+1)%data_size<<endl;
-            if(!isFull()){
-                data[p_end]=value;
-                p_end=(p_end+1)%data_size;
-                tag = false;
-                // cout<<"shuru";
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        
-        /** Delete an element from the circular queue. Return true if the operation is successful. */
-        bool deQueue() {
-            if(isEmpty()){
-                return false;
-            }
-            p_start = (p_start+1)%data_size;
-            tag = true;
-            return true;
-        }
-        
-        /** Get the front item from the queue. */
-        int Front() {
-            if (isEmpty()) {
-                return -1;
-            }
-            return data[p_start];
-        }
-        
-        /** Get the last item from the queue. */
-        int Rear() {
-             if (isEmpty()) {
-                return -1;
-            }
-            // return data[p_end];
-            return data[((p_end+data_size)-1)%data_size];
-        }
-        // void put(){
-        //     int i;
-        //     for(i = 0 ;i<data_size;i++){
-        //         cout<<data[i];
-        //     }
-        // }
-        /** Checks whether the circular queue is empty or not. */
-        bool isEmpty() {
-            if(p_end==p_start&&tag==true){
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            
-        }
-        
-        /** Checks whether the circular queue is full or not. */
-        bool isFull() {
-            if((p_end)%data_size==p_start&&tag==false){
-                return true;
-            }else
-            {
-                return false;
-            }
-            
-        }
-};
-int main(){
-    MyCircularQueue qu(3);
-    cout<<qu.enQueue(1);
-    // cout<<qu.p_end<<" "<<qu.p_start<<endl;
-    cout<<qu.enQueue(2);
-    // cout<<qu.p_end<<" "<<qu.p_start<<endl;
-    cout<<qu.enQueue(3)<<endl;
-    cout<<qu.p_end<<" "<<qu.p_start<<endl;
-    cout<<qu.Rear()<<"      "<<qu.Front()<<endl;
-    // qu.put();
-    // cout<<qu.isFull();
-    return 0;
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
+using namespace std;
+
+void printHeap(vector<int> &v){
+    for(vector<int>::iterator it= v.begin();it!=v.end();++it){
+        cout<< *it <<" ";
+    }
+    cout<<"\n"<<endl;
 }
-/**
- * Your MyCircularQueue object will be instantiated and called as such:
- * MyCircularQueue* obj = new MyCircularQueue(k);
- * bool param_1 = obj->enQueue(value);
- * bool param_2 = obj->deQueue();
- * int param_3 = obj->Front();
- * int param_4 = obj->Rear();
- * bool param_5 = obj->isEmpty();
- * bool param_6 = obj->isFull();
- */
+
+int main()
+{
+    vector<int> minheap;
+    minheap.push_back(58);
+    minheap.push_back(3);
+    minheap.push_back(5);
+    minheap.push_back(6);
+
+    //建立小顶堆
+    make_heap(minheap.begin(), minheap.end(), greater<int>());
+    printHeap(minheap);//6 10 9 30 15 22
+cout<<minheap[0];
+    //插入元素
+    minheap.push_back(20);
+    push_heap(minheap.begin(),minheap.end(), greater<int>());//该算法前提：必须在堆的条件下
+    printHeap(minheap); //6 10 9 30 15 22 20   仍为小顶堆
+
+    //删除堆顶元素
+    pop_heap(minheap.begin(),minheap.end(), greater<int>());
+    printHeap(minheap);//9 10 20 30 15 22 6  不为小顶堆 这个pop_heap操作后，实际上是把堆顶元素放到了末尾
+    minheap.pop_back();//这才彻底在底层vector数据容器中删除
+    printHeap(minheap);//9 10 20 30 15 22  仍为小顶堆
+
+    //堆排序  保持greater，小顶堆，得到的是降序
+    // sort_heap(minheap.begin(),minheap.end(), greater<int>());//试了用less，结果杂乱无章
+    printHeap(minheap);//30 22 20 15 10 9 注意结果是降序的哦!!!其实是调用了很多次pop_heap(...,greater..)，每一次都把小顶堆堆顶的元素往末尾放，没放一次end迭代器减1
+    
+    return 0;
+}

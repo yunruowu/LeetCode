@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "*.html": "html",
+        "*.py": "python",
+        "*.cpp": "cpp",
+        "*.c": "c",
         "vector": "cpp",
         "iostream": "cpp",
         "array": "cpp",
@@ -39,7 +42,8 @@
         "ostream": "cpp",
         "sstream": "cpp",
         "stdexcept": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "stack": "cpp"
     },
     "cSpell.words": [
         "yunruowu"

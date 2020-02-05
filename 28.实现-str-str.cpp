@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-01-01 12:00:59
  * @LastEditors  : yunruowu
- * @LastEditTime : 2020-01-01 12:04:23
+ * @LastEditTime : 2020-02-04 17:34:24
  */
 /*
  * @lc app=leetcode.cn id=28 lang=cpp
@@ -57,7 +57,22 @@ public:
     
     
     int strStr(string haystack, string needle) {
-        
+        if(needle.empty()==true){
+            return 0;
+        }
+        for(int i = 0; i < haystack.size(); i++){
+            int j = 0;
+            int m = i; 
+            while(haystack[m]==needle[j]&&j<needle.size()&&m<haystack.size()){
+                m++;
+                j++;
+            }
+            cout<<j;
+            if(j == needle.size()){
+                return i;
+            }
+        }
+        return -1;
     }
 };
 // @lc code=end

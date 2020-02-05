@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-02-02 10:27:54
  * @LastEditors  : yunruowu
- * @LastEditTime : 2020-02-02 11:03:20
+ * @LastEditTime : 2020-02-02 11:11:36
  */
 /*
  * @lc app=leetcode.cn id=102 lang=cpp
@@ -63,11 +63,11 @@ public:
         queue<TreeNode*> sQue;
         vector<vector<int>> ans;
         if(root == NULL){
-            return ans;    
+            return ans;
         }
         sQue.push(root);
         int sum = 1;
-        while(sQue.empty()==false){
+        while(sQue.empty()!=true){
             int i = 0;
             vector<int> temp;
             while(sum>0){
@@ -78,14 +78,17 @@ public:
                 }
                 if(t->right!=NULL){
                     sQue.push(t->right);
-                    int i = 0;
+                    i++;
                 }
+                cout<<t->val<<" ";
                 temp.push_back(t->val);
                 sQue.pop();
                 sum--;
+                cout<<i<<sum<<endl;
             }
             ans.push_back(temp);
             sum = i;
+            cout<<sum;
         }
         return ans;
     }
