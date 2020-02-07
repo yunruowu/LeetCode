@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-02-02 10:30:03
  * @LastEditors  : yunruowu
- * @LastEditTime : 2020-02-05 21:57:34
+ * @LastEditTime : 2020-02-06 21:05:27
  */
 
 #include<iostream>
@@ -25,4 +25,11 @@ struct ListNode {
     ListNode * next;
     ListNode(int x) : val(x), next(NULL) {}
 };
+
+void Prinetvec(vector<int> nums){
+    for(int i = 0 ;i< nums.size();i++){
+        cout<<nums[i]<<" ";
+    }
+    cout<<endl;
+}
 using namespace std;
