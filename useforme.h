@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Author: yunruowu
  * @Date: 2020-02-02 10:30:03
- * @LastEditors  : yunruowu
- * @LastEditTime : 2020-02-07 21:19:36
+ * @LastEditors: yunruowu
+ * @LastEditTime: 2020-02-21 09:35:27
  */
 
 #include<iostream>
@@ -26,6 +26,26 @@ struct ListNode {
     ListNode * next;
     ListNode(int x) : val(x), next(NULL) {}
 };
+
+// Definition for a Node.//多叉树
+class Node {
+public:
+    int val;
+    vector<Node*> children;
+
+    Node() {}
+
+    Node(int _val) {
+        val = _val;
+    }
+
+    Node(int _val, vector<Node*> _children) {
+        val = _val;
+        children = _children;
+    }
+};
+
+
 using namespace std;
 void Prinetvec(vector<int> nums){
     for(int i = 0 ;i< nums.size();i++){
