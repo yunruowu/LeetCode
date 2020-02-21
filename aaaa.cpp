@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-02-18 11:21:20
  * @LastEditors: yunruowu
- * @LastEditTime: 2020-02-19 21:38:13
+ * @LastEditTime: 2020-02-20 21:50:23
  */
 #include "useforme.h"
 
@@ -49,6 +49,8 @@ int main(int argc, char const *argv[])
     // s();
     // t();?
     // cout<<"           "<<1212;
-    cout<<'l'-'a'<<'e'-'a';
+    string s = "1dasdssss";
+    cout<<s.find("d")<<s.find('d');
+    // cout<<'l'-'a'<<'e'-'a';
     return  0;
 }
