@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-02-02 10:30:03
  * @LastEditors: yunruowu
- * @LastEditTime: 2020-02-21 09:35:27
+ * @LastEditTime: 2020-02-23 10:39:38
  */
 
 #include<iostream>
@@ -14,6 +14,7 @@
 #include<algorithm>
 #include<ctype.h>
 #include <math.h>
+#include <bits/stdc++.h>
 struct TreeNode {
     int val;
     TreeNode *left;
