@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-02-02 10:30:03
  * @LastEditors: yunruowu
- * @LastEditTime: 2020-02-23 10:39:38
+ * @LastEditTime: 2020-02-27 11:35:46
  */
 
 #include<iostream>
@@ -29,22 +29,19 @@ struct ListNode {
 };
 
 // Definition for a Node.//多叉树
-class Node {
-public:
-    int val;
-    vector<Node*> children;
+// class Node {
+// public:
+//     int val;
+//     vector<Node*> children;
 
-    Node() {}
+//     Node() {}
 
-    Node(int _val) {
-        val = _val;
-    }
+//     Node(int _val) {
+//         val = _val;
+//     }
 
-    Node(int _val, vector<Node*> _children) {
-        val = _val;
-        children = _children;
-    }
-};
+    
+// };
 
 
 using namespace std;
