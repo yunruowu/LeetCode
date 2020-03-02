@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-03-02 23:32:07
  * @LastEditors: yunruowu
- * @LastEditTime: 2020-03-02 23:52:52
+ * @LastEditTime: 2020-03-03 00:00:50
  */
 /*
  * @lc app=leetcode.cn id=690 lang=cpp
@@ -85,22 +85,32 @@ class Solution {
 public:
 vector<Employee*> E;
     int find_e(int id){
-
+        for(int i = 0;i<E.size();i++){
+            if(E[i]->id==id){
+                return i;
+            }
+        }
+        return -1;
     }
     int getImportance(vector<Employee*> employees, int id) {
-        E = employees
+        E = employees;
         int sum = 0;
         queue<int> que;
-        que.push(id);
+        int pos = find_e(id);
+        if(id == -1){
+            return 0;
+        }
+        que.push(pos);
         while(!que.empty())
         {
-            int cur = que.front()-1;
+            int cur = que.front();
             que.pop();
             cout<<"s";
             sum+=employees[cur]->importance;
             for(int i = 0;i<employees[cur]->subordinates.size();i++){
                 cout<<"s";
-                que.push(employees[cur]->subordinates[i]);
+                que.push(find_e
+                (employees[cur]->subordinates[i]));
             }
         }
         return sum;
