@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-02-18 11:21:20
  * @LastEditors: yunruowu
- * @LastEditTime: 2020-03-09 00:07:37
+ * @LastEditTime: 2020-03-09 10:42:45
  */
 
 
@@ -32,9 +32,10 @@ public:
 
 int main(int argc, char const *argv[])
 {
-    char a = 'A';
-    tolower(a);
-    cout<<char(a);
+    int num = 987;
+    while(num!=0){
+        
+    }
     // cout<<a;
     return 0;
 }
