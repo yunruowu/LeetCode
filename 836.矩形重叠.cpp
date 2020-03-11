@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-03-11 10:28:49
  * @LastEditors: yunruowu
- * @LastEditTime: 2020-03-11 11:34:06
+ * @LastEditTime: 2020-03-11 11:47:34
  */
 /*
  * @lc app=leetcode.cn id=836 lang=cpp
@@ -58,7 +58,6 @@ public:
                  rec1[0] >= rec2[2] ||   // right
                  rec1[1] >= rec2[3]);    // top
     }
-                                                                                                                          
 };
 // @lc code=end
 
