@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-02-02 10:30:03
  * @LastEditors: yunruowu
- * @LastEditTime: 2020-02-27 11:35:46
+ * @LastEditTime: 2020-03-14 10:54:14
  */
 
 #include<iostream>
@@ -45,7 +45,14 @@ struct ListNode {
 
 
 using namespace std;
+
 void Prinetvec(vector<int> nums){
+    for(int i = 0 ;i< nums.size();i++){
+        cout<<nums[i]<<" ";
+    }
+    cout<<endl;
+};
+void Prinetvec(vector<string> nums){
     for(int i = 0 ;i< nums.size();i++){
         cout<<nums[i]<<" ";
     }

@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-02-18 11:21:20
  * @LastEditors: yunruowu
- * @LastEditTime: 2020-03-13 10:48:01
+ * @LastEditTime: 2020-03-14 11:22:32
  */
 
 
@@ -29,10 +29,26 @@ public:
     // the id of direct subordinates
     vector<int> subordinates;
 };
-
+vector<string> to_word(string S){
+        int i =0;
+        vector<string> word;
+        string ins;
+        while(i<S.size()){
+            ins.clear();
+            while(S[i]!=' '&&i<S.size()){
+                ins +=S[i];
+                i++;
+            }
+            word.push_back(ins);
+            i++;
+        }
+        return word;
+    }
 int main(int argc, char const *argv[])
 {
-    vector<int> pos(2,0);
-    Prinetvec(pos);
+    string s = "the id of direct subordinates id";
+    vector<string> a =to_word(s);
+    cout<<(a.begin()-find(a.begin(),a.end(),a[0]));
     return 0;
 }
+
