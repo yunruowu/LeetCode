@@ -4,7 +4,7 @@
  * @Author: yunruowu
  * @Date: 2020-02-18 11:21:20
  * @LastEditors: yunruowu
- * @LastEditTime: 2020-03-09 10:42:45
+ * @LastEditTime: 2020-03-13 10:48:01
  */
 
 
@@ -32,10 +32,7 @@ public:
 
 int main(int argc, char const *argv[])
 {
-    int num = 987;
-    while(num!=0){
-        
-    }
-    // cout<<a;
+    vector<int> pos(2,0);
+    Prinetvec(pos);
     return 0;
 }
