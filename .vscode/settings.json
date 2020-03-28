@@ -48,7 +48,8 @@
         "list": "cpp",
         "unordered_set": "cpp",
         "regex": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "xiosbase": "cpp"
     },
     "cSpell.words": [
         "yunruowu"
