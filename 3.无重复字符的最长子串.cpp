@@ -68,7 +68,7 @@ public:
                 subLen = max(subLen, i-pos+1);
                 i++;
                 
-                cout<<pos<<' '<<i<<" "<<subLen<<endl;
+                // cout<<pos<<' '<<i<<" "<<subLen<<endl;
             }else{
                 while(s[pos]!=s[i])
                 {    
@@ -77,7 +77,7 @@ public:
                 }
                 pos++;
                 i++;
-                cout<<pos<<' '<<i<<endl;
+                // cout<<pos<<' '<<i<<endl;
                 // if(pos == i){
                 //     i++;
                 // }
