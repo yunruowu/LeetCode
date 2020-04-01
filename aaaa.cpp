@@ -46,9 +46,7 @@ vector<string> to_word(string S){
     }
 int main(int argc, char const *argv[])
 {
-    string s = "the id of direct subordinates id";
-    vector<string> a =to_word(s);
-    cout<<(a.begin()-find(a.begin(),a.end(),a[0]));
-    return 0;
+    vector<int> alpha(26, 0);
+    Prinetvec(alpha);
 }
 
