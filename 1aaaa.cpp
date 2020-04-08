@@ -44,6 +44,11 @@ vector<string> to_word(string S){
         }
         return word;
     }
+// ！dsdsd
+//TODO:
+//*
+//?
+////fewfsfsfsfs
 int main(int argc, char const *argv[])
 {
     vector<int> alpha(26, 0);
