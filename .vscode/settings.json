@@ -50,7 +50,9 @@
         "regex": "cpp",
         "valarray": "cpp",
         "xiosbase": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "xlocale": "cpp",
+        "xstring": "cpp"
     },
     "cSpell.words": [
         "yunruowu"

@@ -51,7 +51,21 @@ vector<string> to_word(string S){
 ////fewfsfsfsfs
 int main(int argc, char const *argv[])
 {
-    vector<int> alpha(26, 0);
-    Prinetvec(alpha);
+    set< vector<int> >s;
+    vector<int> a;
+    a.push_back(1);
+    a.push_back(2);
+    vector<int> b;
+    b.push_back(2);
+    b.push_back(1);
+    s.insert(a);
+    sort(b.begin(), b.end());
+        s.insert(b);
+    set< vector<int> >::iterator it;
+    for(it=s.begin ();it!=s.end ();it++)
+    {
+        vector<int> m = *it;
+        Prinetvec(m);
+    }
 }
 
