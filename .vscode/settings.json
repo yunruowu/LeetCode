@@ -52,7 +52,8 @@
         "xiosbase": "cpp",
         "random": "cpp",
         "xlocale": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "future": "cpp"
     },
     "cSpell.words": [
         "yunruowu"
