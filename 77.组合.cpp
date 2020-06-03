@@ -33,12 +33,32 @@
 // @lc code=start
 class Solution {
 public:
-    vector<vector<int>> combine(int n, int k) {
-        vector<vector<int>> ans;
-        if(k == 0||k>n){
-            return ans;
+    int num;
+    int nn;
+    vector<vector<int>> ans;
+    void dfs(int cur,int pos,vector<int>temp){
+        // cout<<cur<<endl;
+        if(cur==num){
+            cout<<temp[0];
+            ans.push_back(temp);
+            return;
         }
-        
+        for(int i = pos+1; i<=nn; i++){
+            // vector<int> now = temp;
+            temp.push_back(i);
+            dfs(cur+1, i, temp);
+            temp.pop_back();
+        }
+        return;
+    }
+    vector<vector<int>> combine(int n, int k) {
+        // vector<vector<int>> ans;
+        vector<int> ins;
+        num = k;
+        nn = n;
+        dfs(0, 0, ins);
+        cout<<ans.size();
+        return ans;
     }
 };
 // @lc code=end
