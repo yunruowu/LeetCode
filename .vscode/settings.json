@@ -53,7 +53,9 @@
         "random": "cpp",
         "xlocale": "cpp",
         "xstring": "cpp",
-        "future": "cpp"
+        "future": "cpp",
+        "bitset": "cpp",
+        "scoped_allocator": "cpp"
     },
     "cSpell.words": [
         "yunruowu"

@@ -1,0 +1,10 @@
+graph pic1 { 
+  a -- b;
+  a -- c;
+  a -- d;
+  b -- {e,f};
+  f -- j;
+  c -- {g,h};
+  g -- {k};
+  d -- i -- m;
+} 
