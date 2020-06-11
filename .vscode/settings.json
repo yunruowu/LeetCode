@@ -55,7 +55,8 @@
         "xstring": "cpp",
         "future": "cpp",
         "bitset": "cpp",
-        "scoped_allocator": "cpp"
+        "scoped_allocator": "cpp",
+        "complex": "cpp"
     },
     "cSpell.words": [
         "yunruowu"
