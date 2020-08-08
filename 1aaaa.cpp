@@ -22,7 +22,7 @@ void tt(){
 class Employee {
 public:
     // It's the unique ID of each node.
-    // unique id of this employee
+    // unique id of this employee wsl --set-version Ubuntu (默认) 2
     int id;
     // the importance value of this employee
     int importance;

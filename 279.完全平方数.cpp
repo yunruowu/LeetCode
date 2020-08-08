@@ -33,21 +33,31 @@
 // @lc code=start
 class Solution {
 public:
-    bool isS(int n)
-    {
-        int s = sqrt(n);
-        if(s*s == n){
-            return true;
-        }
-        return false;
-    }
+    
     int numSquares(int n) {
-        int sum = 0;
-        if(isS(n)){
+        // int ans =0;
+        if(n==1){
             return 1;
         }
-        int a = sqrt(n);
-        
+        vector<int> dp(n+1, 0);
+        dp[1] = 1;
+        int i = 3;
+        dp[2] = 2;
+        for(; i <=n; i++){
+            int minval = 99999;
+            int j = 1;
+            int num = sqrt(i);
+            if(i==num*num){
+                dp[i]=1;
+                continue;
+            }
+            while(i-j*j>0){
+                minval = min(minval, dp[i-j*j]);
+                j++;
+            }
+            dp[i]=minval+1;
+        }
+        return dp[n];
     }
 };
 // @lc code=end
