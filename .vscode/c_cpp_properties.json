@@ -3,6 +3,13 @@
         {
             "name": "Win32",
             "includePath": [
+                "D:\\program\\MINGW\\include",
+                "d:\\program\\mingw\\lib\\gcc\\mingw32\\4.8.1\\include\\c++",
+                "d:\\program\\mingw\\lib\\gcc\\mingw32\\4.8.1\\include\\c++\\mingw32",
+                "d:\\program\\mingw\\lib\\gcc\\mingw32\\4.8.1\\include\\c++\\backward",
+                "d:\\program\\mingw\\lib\\gcc\\mingw32\\4.8.1\\include",
+                "d:\\program\\mingw\\lib\\gcc\\mingw32\\4.8.1\\include-fixed",
+                "D:\\program\\MINGW\\mingw32\\include",
                 "${workspaceFolder}/**"
             ],
             "defines": [

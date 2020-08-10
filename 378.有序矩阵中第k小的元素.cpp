@@ -36,12 +36,46 @@
  * 你可以假设 k 的值永远是有效的，1 ≤ k ≤ n^2 。
  * 
  */
-#include "useforme.h"
+#include <iostream>
+#include "useforme.h"   
 // @lc code=start
+struct pos
+{
+    int x;
+    int y;
+};
+
 class Solution {
 public:
-    int kthSmallest(vector<vector<int>>& matrix, int k) {
 
+    int kthSmallest(vector<vector<int>>& matrix, int k) {
+        int i = 1;
+
+        pos start;
+        start.x = 0;
+        start.y = 0;
+
+        pos min1, min2;
+        min1.x = start.x + 1;
+        min1.y = start.y;
+        min2.y = start.y + 1;
+        min2.x = start.x;
+
+        pos now;
+        if(matrix[min1.x][min2.y]<matrix[min2.x][min2.y])
+        {
+            now = min1;
+        }else{
+            now = min2;
+        }
+        
+
+        int len = matrix[0].size();
+        int row = matrix.size();
+        while(i<k){
+            
+            i++;
+        }
     }
 };
 // @lc code=end
