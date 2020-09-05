@@ -53,26 +53,38 @@
  */
 class Solution {
     vector<string> ans;
-    string str;
+    // string str1;
 public:
-    void through(TreeNode* root){
-        
+    void through(TreeNode* root, string str){
+        if(str!=""){
+            str+="->";
+        }
         str = str + to_string(root->val);
-        ans.push_back(str);
+        
         if(root->left){
-            
-            through(root->left);
+            through(root->left, str);
         }
         if(root->right){
-            through(root->right);
+            through(root->right, str);
         }
         if(root->left == NULL && root->right == NULL){
+            ans.push_back(str);
             return;
         }
     }
-    vector<string> binaryTreePaths(TreeNode* root) {
+    vector<string> binaryTreePaths(TreeNode* root ) {
+        string s = "";
+        if( root==NULL )
+        {
+            return ans;
+        }
+        through(root, s);
+        // vector<string> ret;
+        // for(int i = 0; i < ans.size(), i++){
+        //     string tem = ans[i];
+
+        // }
         
-        through(root);
         return ans;
     }
 };
