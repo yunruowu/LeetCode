@@ -29,6 +29,7 @@
  * 
  * 
  */
+#include "useforme.h"
 
 // @lc code=start
 /**
@@ -43,7 +44,39 @@
 class Solution {
 public:
     int sumOfLeftLeaves(TreeNode* root) {
+        if(root==NULL){
+            return 0;
+        }
+        stack<TreeNode*> sta;
+        sta.push(root);
+        int ans = 0;
         
+        while (!sta.empty())
+        {
+            TreeNode* t = sta.top();
+            sta.pop();
+            TreeNode* left = t->left;
+            if(left!=NULL)
+            {
+                if(left->left==NULL&&left->right==NULL){
+                    // cout<<left->val<<" ";
+                    ans += left->val;
+                }else
+                {
+                // cout<<left->val<<" ";
+
+                    sta.push(left);
+                }
+            }
+            if(t->right!=NULL){
+                // cout<<t->right->val<<" ";
+                
+                sta.push(t->right);
+            }
+            // TreeNode* right = t->right;
+
+        }
+        return ans;
     }
 };
 // @lc code=end
