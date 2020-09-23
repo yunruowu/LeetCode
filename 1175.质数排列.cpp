@@ -48,9 +48,32 @@
 // @lc code=start
 class Solution {
 public:
-    int numPrimeArrangements(int n) {
+    bool isPrime(int n){      
+        for(int i=3;i<n;i+=2) if(!(n%i)) return 0;
+        return 1;
+    }//判断从3开始的数是否是质数
 
+    long fac(int n){
+        long ans=1;
+        while(n>1){
+            ans*=n; ans=ans%1000000007; n--;
+        }
+        return ans;
+    }// 阶乘的实现
+
+    int ansGet(int n,int numOfPrime){
+        return ((fac(numOfPrime)*fac(n-numOfPrime))%1000000007);
+    }//计算最终结果
+
+    int numPrimeArrangements(int n) {
+        int numOfPrime=0;
+        if(n>=2) numOfPrime++;
+        for(int i=3;i<=n;i+=2){
+            if(isPrime(i)) numOfPrime++;
+        }
+        return ansGet(n,numOfPrime);
     }
 };
+
 // @lc code=end
 
